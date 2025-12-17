@@ -1,16 +1,15 @@
 /* ----------------------------------------------------- */
 /* Header */
 /* ----------------------------------------------------- */
-.Header-all {height: 74px;}
-.logo {width: 130px; margin-bottom: -10px;}
-
+.logo {width: 130px;}
+@media (max-width: 991px) {.navbar-collapse {background-color: #F9EEFF;}}
 
 
 /* ----------------------------------------------------- */
 /* AI 소개 (메인 이미지) */
 /* ----------------------------------------------------- */
 .Introduce {display: flex; justify-content: center;}
-.AI_introduce_img {width: 1200px;}
+.AI_introduce_img {width: 1200px; box-shadow: 0 5px 7px gray;}
 
 
 /* ----------------------------------------------------- */
@@ -24,14 +23,77 @@
 /* ----------------------------------------------------- */
 /* AI Basic Category */
 /* ----------------------------------------------------- */
-.AI-category h2 {display: flex; gap: 20px; justify-content: center; margin-top: 50px;}
-.circle-sm { width: 90px; height: 90px; border-radius: 50%; background-color: #6c757d; color: white; display: flex; justify-content: center; align-items: center; font-size: 15px;}
+.AICategoty_all {width: 100%; padding: 80px 0; display: flex; justify-content: center;}
+.AiCategory_container {display: flex; justify-content: center }
 
+.circle_Row {width: 100%; max-width: 1200px; border-top: 5px solid #6868AC; border-bottom: 5px solid #6868AC; padding: 60px 0;}
+.circle_Row h1 {background-color: #9898dc; color: white; font-weight: 550; text-align: center; margin-bottom: 60px;  min-height: 40px;}
+.AICategory_circle {display: flex; justify-content: center; margin-bottom: 40px;}
+
+.circle_div {display: flex; justify-content: center; align-items: center; cursor: pointer;}
+.circle_div img {width: clamp(70px, 18vw, 140px); height: auto;}
+.circle_div:hover {background-color: #F3EEFF;}
+.circle_text {margin-top: 24px; text-align: center;}
+.circle_text h2 {font-weight: 700; font-size: 24px;}
+.circle_text p {width: 200px; font-size: 16px; line-height: 1.4;}
 
 /* ----------------------------------------------------- */
 /* AI Membership Category */
 /* ----------------------------------------------------- */
-.circle-lg { width: 180px; height: 180px; border-radius: 50%; background-color: #6c757d; color: white; display: flex; justify-content: center; align-items: center; font-size: 20px;}
+.membership_all {width: 100%; padding: 80px 0; display: flex; justify-content: center; margin-top:-155px;}
+.membership_container {display: flex; justify-content: center;}
+
+.membership_Row {width: 100%; max-width: 1200px; border-bottom: 5px solid #6868AC; padding: 60px 0;}
+.membership_Row h1 {background-color: #9898dc; color: white; font-weight: 550; text-align: center; margin-bottom: 60px;}
+.AICategory_circle {display: flex; justify-content: center; margin-bottom: 40px;}
+
+.membership_circle_div {display: flex; justify-content: center; align-items: center;  padding-top: 20px; padding-bottom: 50px;}
+.membership_circle_div img {cursor: pointer; width: clamp(90px, 18vw, 200px); height: auto; border-radius: 100%;}
+.membership_circle_div img:hover {border: 5px solid #9999d3;}
+
+/* ----------------------------------------------------- */
+/* 게시판 */
+/* ----------------------------------------------------- */
+.notice {width: 62%; margin: 0px auto 90px auto;}
+
+.notice-header {display: flex; justify-content: space-between; align-items: center;}
+
+.write-btn {background: #2c2c54; color: #fff; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer;}
+
+.notice-table {
+  margin-top: 15px;
+  border-top: 2px solid #000;
+}
+
+.notice-head,
+.notice-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 100px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.notice-head {
+  font-weight: bold;
+}
+
+.notice-row .title {
+  text-align: left;
+  cursor: pointer;
+}
+
+.notice-row:hover {
+  background-color: #f5f5f5;
+}
+
+
+.pagination {display: flex; align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
 
 /* ----------------------------------------------------- */
 /* Footer */
@@ -39,7 +101,8 @@
 .Footer_navBar {padding-top: 0; padding-bottom: 0;}
 
 
-/* 로그인존 */
+
+/* ---------로그인존-------- */
 .login-page {height: 800px;display: grid; place-items: center;}
 .login-card {width: 420px; height: 650px; background-color: #F3EEFF;padding: 34px 34px 28px;box-shadow: 0 10px 30px rgba(0,0,0,0.08);}
 
@@ -68,7 +131,10 @@
 
 
 /*--------------- 회원가입존----------------- */
-.signup-bs-page {background: #fff;}
+.signup-bs-container {max-width: 1200px;}
+.signup-bs-page { background: #fff;}
+
+.text-center {padding: 50px;}
 
  .signup-bs-divider {height: 2px; background: #c9c9ff;}
 
@@ -88,3 +154,81 @@
  .singup-bs-table {border:1px solid #ddd;}
 
  .signup-bs-left {width: 170px;font-weight: 900;border-right: 1px solid #ddd;background: #fff;vertical-align: top;padding: 16px 12px !important;}
+
+ .signup-bs-mid {border-right: 1px solid #ddd; padding: 14px !important;}
+
+ .signup-bs-right {width: 220px; padding: 14px !important;}
+
+ /* 부가정보 배경 섹션 */
+ .signup-bs-alt td {background: #c9c9ff;}
+ .signup-bs-left.alt {background: #fff;}
+
+ /* 회원정보 입력 gird */
+ .signup-bs-gird {display: grid;grid-template-columns: 90px 1fr;gap: 10px 12px;align-items: center;}
+.signup-bs-label {font-size: 13px;font-weight: 700;}
+.signup-bs-label2 {font-size: 13px; font-weight: 700;}
+
+/* 버튼 */
+.signup-bs-avatar {display: flex;flex-direction: column;align-items: center;}
+
+
+
+/* ----------결제 페이지----------- */
+.pay-page {min-height: calc(100vh - 64px);display: grid;place-items: center;padding: 24px 14px;background: #fff;}
+
+.pay-card {width: min(520px, 100%); background: #F3EEFF;border-radius: 18px;padding: 22px 18px;box-shadow: 0 10px 30px rgba(0,0,0,0.08);}
+
+.pay-title {font-size: 24px;font-weight: 900;margin: 0 0 16px;color: #111;}
+
+.pay-section {background: #fff;border-radius: 12px; padding: 16px 14px;}
+.pay-section-title {margin: 0 0 10px;font-size: 18px;font-weight: 900;color: #111;}
+
+.pay-amount {display: flex;align-items: baseline;gap: 4px;font-weight: 900;color: #111;}
+.pay-amount.currency {font-size: 16px;opacity: 0.9;}
+.pay-amount-number {font-size: 22px;}
+
+.pay-divider {height: 2px;background: #b7a6ff;opacity: 0.8;border-radius: 999px;margin: 14px 0;}
+
+/* 결제페이부분 */
+.pay-methods {display: grid;gap: 12px;}
+.pay-method {width: 100%; height: 44px;padding: 0; border-radius: 8px; border: 1px solid #d9d9ff;background: #fff;font-weight: 800;cursor: pointer; display: flex;align-items: center;justify-content: center;}
+
+/* 이미지 버튼// 텍스트 숨기고 배경으로 이미지 표시 */
+.pay-method.is-img {color:transparent;text-shadow: none;background-repeat: no-repeat;background-position: center;background-size: cover;}
+
+/* 카드 */
+.pay-method--card.is-img {background-image: url("../public/img/card-pay.png");border-color: #111;}
+/* 네이버 */
+.pay-method--naver.is-img {background-image: url("../public/img/naver-pay.png");border-color:#19ce60;}
+/* 카카오 */
+.pay-method--kakao.is-img {background-image: url("../public/img/kakao-pay.png");border-color: #fee500;}
+/* 토스 */
+.pay-method--toss.is-img {background-image: url("../public/img/toss-pay.png");border-color: #2f6bff;}
+
+/* 눌렀을때 */
+.pay-method.is-active {outline: 3px solid rgba(141,114,255,0.35);border-color: #8d72ff;}
+
+
+/* 동의 */
+.pay-agree {display: grid;gap: 10px;padding: 0 6px 6px;}
+
+.pay-check {display: flex;align-items: center;gap: 10px;font-size: 14px;color: #333;font-weight: 700;}
+.pay-check input {width: 18px;height: 18px; accent-color: #8d72ff;}
+
+.pay-submit {width: 100%;height: 46px;margin-top: 8px;border: 0;border-radius: 10px;background: #111;color: #fff;font-weight: 900;cursor: pointer;}
+.pay-submit:disabled {opacity: 0.5;cursor: not-allowed;}
+
+/* 반응형 */
+@media (max-width:420px) {
+    .pay-card {padding: 18px 14px;border-radius: 16px;}
+    .pay-title {font-size: 22px;}
+    .pay-amount-number {font-size: 20px;}
+    .pay-method {height: 42px;font-size: 14px;}
+}
+
+
+
+
+
+.mypage-content {max-width: 1000px; margin: 50px auto;}
+.mypage-img {max-width: 300px; margin-left: -50px;}

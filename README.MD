@@ -1,3 +1,11 @@
+## 프로젝트 실행 오류시 
+[Flask]
+pip install -r requirements.txt
+
+[Front]
+cd frontend                     # 프론트엔드 폴더 이동
+npm install                     # package내 확장프로그램 설치
+
 ## 🌞프로젝트 구조
 
 ```
