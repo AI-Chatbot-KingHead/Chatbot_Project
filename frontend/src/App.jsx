@@ -39,7 +39,7 @@ function App() {
         </Routes>   
         <Footer/>      
         
-        <TestView test={test} />
+        {/* <TestView test={test} /> */}
         </>
         )
 }
