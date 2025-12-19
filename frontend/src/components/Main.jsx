@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-
+import { useNavigate } from "react-router-dom";
 
 const AIIntroduce = () => {
     const noticeData = [
@@ -9,7 +9,7 @@ const AIIntroduce = () => {
         { id: 3, title: '우', writer: '수도승', views: 50 },
         { id: 4, title: '왕', writer: '태연', views: 20 },
     ];
-
+    const navigate = useNavigate();
 
     return (
         <section>
@@ -131,7 +131,7 @@ const AIIntroduce = () => {
             <div className="notice">
                 <div className="notice-header">
                     <h2>게시판</h2>
-                    <button className="write-btn">작성</button>
+                    <button className="write-btn" onClick={() => navigate('/NoticeWrite')}>작성</button>
                 </div>
 
                 <div className="notice-table">

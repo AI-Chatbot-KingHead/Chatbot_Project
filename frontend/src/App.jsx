@@ -12,6 +12,7 @@ import Mypage from './components/userbasic/Mypage.jsx'
 import Pay from './components/userbasic/Pay.jsx'
 import Detail from './components/Detail.jsx'
 import ErrorPage from "./components/common/ErrorPage.jsx"
+import NoticeWrite from './components/notice/NoticeWrite.jsx';
 
 /* 자동 스크롤 import */
 import BackToTop from "./components/common/BackToTop.jsx";
@@ -30,6 +31,7 @@ function App() {
             <Route path="/Pay" element={<Pay />} />
             <Route path='/Detail' element={<Detail />} />
             <Route path='/ErrorPage' element={<ErrorPage />} />
+            <Route path='/NoticeWrite' element={<NoticeWrite />} />
         </Routes>   
         <Outlet />
         <BackToTop />

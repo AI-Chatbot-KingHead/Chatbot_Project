@@ -1,0 +1,25 @@
+/* ---------------------------------------------- */
+/* 게시글 상세 페이지 */
+/* ---------------------------------------------- */
+
+
+
+/* ---------------------------------------------- */
+/* 게시글 작성 페이지 */
+/* ---------------------------------------------- */
+.NoticeWrite_all {width: 100%; max-width: 1200px;}
+.NW_title {width: 150px; height: 40px; margin: 70px 0; background-color: #F3EEFF; display: flex; justify-content: center; align-items: center; font-weight: 550; border-bottom: 1px solid #444;}
+.image-preview-container {display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;}
+.preview-image {width: 120px; height: 120px; object-fit: cover; border-radius: 8px;}
+.content-textarea {resize: none;}
+.preview-wrapper {position: relative;}
+.Del_button{border: none; width: 17px; height: 17px; display: flex; justify-content: center; align-items: center; position: absolute; right: 0; border-radius: 5px;}
+
+.NW-sub-title {display: flex;}
+.NW-sub-h6 {width: 120px; height: 35px; display: flex; justify-content: center; align-items: center; background-color: #CAC6FF; margin-right: 10px; border-radius: 6px;}
+.NW-title-text {height: 35px;}
+.NW-title-text1 {height: 35px;}
+/* ---------------------------------------------- */
+/* 게시글 수정 페이지*/
+/* ---------------------------------------------- */
+
