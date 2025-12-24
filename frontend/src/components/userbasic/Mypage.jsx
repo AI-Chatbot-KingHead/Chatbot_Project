@@ -2,7 +2,7 @@ import React,{ useState } from 'react'
 import { Container, Row, Col, Image, Form, InputGroup, Button } from 'react-bootstrap';
 import { updateProfile } from '../../api/Mypage_Api';
 import  { AuthUtils }  from '../../api/User_Api';
-
+import '../../css/User.css'
 
 const Mypage = () => {
 
