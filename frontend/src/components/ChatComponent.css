@@ -5,7 +5,7 @@
 .chat-title {text-align: center;color: var(--bot-color);margin-bottom: 30px;}
 
 /* 인트로 */
-.chat-intro {background: #f9f9f9;padding:0 10px;border-radius: 12px;border: 1px solid #eee;margin-bottom: 16px;font-size: 0.95rem;color: #444;}
+.chat-intro {background: #f9f9f9;padding:0 10zpx;border-radius: 12px;border: 1px solid #eee;margin-bottom: 16px;font-size: 0.95rem;color: #444;}
 
 /* 채팅 패널 입력바+메시지 */
 .chat-panel {border: 1px solid #ddd;border-radius: 15px;background: #fff;overflow: hidden;}
@@ -39,9 +39,9 @@
 .chatSendBtn:disabled {opacity: 0.5;cursor: not-allowed;}
 
 /* 리포트 버튼/박스 */
-.chatReportBtn {width: 100%;margin-top: 16px;padding: 16px;background: #212529;color: #fff;border: none;border-radius: 12px;cursor: pointer;}
+.chat-reportBtn {width: 100%;margin-top: 16px;padding: 16px;background: #212529;color: #fff;border: none;border-radius: 12px;cursor: pointer;}
 
-.chatReportBox {margin-top: 16px;padding: 20px;border: 1px solid #ddd;border-radius: 12px;background: #fff;}
+.chat-reportBox {margin-top: 16px;padding: 20px;border: 1px solid #ddd;border-radius: 12px;background: #fff;}
 
 /* 반응형 */
 @media (max-width: 520px) {
