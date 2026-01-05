@@ -1,8 +1,7 @@
-//frontend/src/userbasic/Login.jsx
 import '../../css/User.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser, TokenManager } from "../../api/User_Api";
+import { loginUser, AuthUtils } from "../../api/User_Api"; // 로그인 API
 import { Form } from 'react-bootstrap';
 
 export default function Login() {
@@ -15,19 +14,19 @@ export default function Login() {
 
   //실제 폼 저장라인
   const onSubmit = async(e) => {
-    e.preventDefault();
+    e.preventDefault();        // 폼 기본 제출 막기
     setLoading(true);
     setError("");
 
      try {
-      const data = await loginUser(email, password);
+      const data = await loginUser(email, password);  // User_Api.js에 정의한 loginUser 호출
 
        if (data.success) {
-           console.log("✅ 로그인 성공 응답:", data);
-           console.log("🎉 로그인 완료! 메인으로 이동합니다.");
+           console.log("✅ 로그인 성공 응답:", data); // 백엔드 응답 전체 나중에 추가할 부분
+           console.log("🎉 로그인 완료! 메인으로 이동합니다."); // 이거 뜨면 로그인 되는거임
 
-           //로그인값 저장 및 토큰 생성해주기 여기서 닉네임으로 설정
-           TokenManager.save(data.nickname);
+           //로그인값 저장 및 토큰 생성해주기
+           AuthUtils.login(data.nickname);
            console.log("✅ AuthUtils.login 완료 - 닉네임 토큰:", data.nickname);
 
             navigate("/");
@@ -49,6 +48,7 @@ export default function Login() {
     <div className="login-page">
       <div className="login-card">
         <div className="login-avatar">
+          {/* 아이콘 이미지 public에 넣고 아래 src만 바꾸기 */}
           <img src="/img/Login_logo.png" alt="avatar" />
         </div>
 

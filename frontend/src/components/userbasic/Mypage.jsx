@@ -3,9 +3,9 @@
 import React,{ useEffect, useState } from 'react'
 import { Container, Row, Col, Image, Form, InputGroup, Button } from 'react-bootstrap';
 import { updateProfile } from '../../api/Mypage_Api';
-import  { TokenManager }  from '../../api/User_Api';
+import  { AuthUtils }  from '../../api/User_Api';
 import '../../css/User.css'
-import { getMyProfile,delete_user } from '../../api/Mypage_Api';
+import { getMyProfile } from '../../api/Mypage_Api';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -19,7 +19,6 @@ const Mypage = () => {
   const [profileFile, setProfileFile] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
 
   const handleChangeNickname = async () => {
@@ -73,28 +72,13 @@ const Mypage = () => {
 
   const handleDeleteUser = async () => {
     if (!window.confirm('정말 회원탈퇴 하시겠습니까?')) return;
-
-    try {
-      setIsSubmitting(true);
-
-      //Mypage_Api 사용
-      const result = await delete_user();
-
-      if (result.success) {
-        TokenManager.clear();
-        alert('회원탈퇴가 완료되었습니다! 🙏');
-        navigate('/');
-      }
-    } catch (error) {
-      alert(`회원탈퇴 실패: ${error.message}`);
-    } finally {
-      setIsSubmitting(false);
-    }
+    AuthUtils.logout();
+    alert('회원탈퇴 API 준비 중입니다.');
   };
 
   //GPT (유저정보 불러오기)
   useEffect(() => {
-  if (!TokenManager.isLoggedIn()) {
+  if (!AuthUtils.isLoggedIn()) {
     setLoading(false);
     return;
   }
@@ -107,7 +91,7 @@ const Mypage = () => {
     } catch (err) {
       console.error(err);
       alert('유저 정보를 불러오지 못했습니다.');
-      TokenManager.logout();
+      AuthUtils.logout();
     } finally {
       setLoading(false);
     }
@@ -123,7 +107,7 @@ if (loading) {
     </Container>
   );
 }
-    if (!TokenManager.isLoggedIn()) {
+    if (!AuthUtils.isLoggedIn()) {
         return (
           <div className='mypage-content'>
             <Container>

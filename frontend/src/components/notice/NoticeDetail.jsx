@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "../../css/Notice.css";
+import "./NoticeDetail.css";
 import { fetchNoticeDetail, likeNotice, createComment, deleteNotice, deleteComment } from "../../api/Notice_Api";
-import { TokenManager } from '../../api/User_Api';
+import { AuthUtils } from '../../api/User_Api';
 
 export default function NoticeDetail() {
   const { noticeId } = useParams();
   const navigate = useNavigate();
-
 
   // 상태 통합
   const [state, setState] = useState({
@@ -20,13 +19,7 @@ export default function NoticeDetail() {
     error: null
   });
 
-  const isOwner = TokenManager.getNickname() === state.noticeData?.author_name;
-  useEffect(() => {
-      console.log('🔍 현재 닉네임:', TokenManager.getNickname());
-      console.log('📋 게시글 데이터:', state.noticeData);
-    }, [state.noticeData]);
-
-  // 데이터 로드
+  // 데이터 로드 (두 번 호출 해결)
   useEffect(() => {
     const loadDetail = async () => {
       try {
@@ -57,10 +50,6 @@ export default function NoticeDetail() {
   // 좋아요
   const onClickLike = async () => {
     if (!state.noticeData || state.likeLoading) return;
-    if (!TokenManager.isLoggedIn()) {
-    alert('로그인 후 좋아요를 눌러주세요!');
-    return;
-    }
     try {
       setState(prev => ({ ...prev, likeLoading: true }));
       const res = await likeNotice(state.noticeData.notice_id);
@@ -68,7 +57,9 @@ export default function NoticeDetail() {
         ...prev,
         noticeData: { ...prev.noticeData, notice_like: res.notice_like }
       }));
-    }  finally {
+    } catch (err) {
+      alert(err.message || "좋아요 처리 중 오류");
+    } finally {
       setState(prev => ({ ...prev, likeLoading: false }));
     }
   };
@@ -89,8 +80,8 @@ export default function NoticeDetail() {
   const onSubmitComment = async (e) => {
     e.preventDefault();
     const text = state.newComment.trim();
-    if (!text || !state.noticeData || state.commentLoading || !TokenManager.isLoggedIn()) {
-      if (!TokenManager.isLoggedIn()) alert("로그인 후 댓글을 작성할 수 있습니다.");
+    if (!text || !state.noticeData || state.commentLoading || !AuthUtils.isLoggedIn()) {
+      if (!AuthUtils.isLoggedIn()) alert("로그인 후 댓글을 작성할 수 있습니다.");
       return;
     }
     try {
@@ -184,14 +175,12 @@ export default function NoticeDetail() {
               다음글 →
             </button>
           </div>
-          {isOwner && (
           <div className="nd-actions">
             <button className="nd-actionBtn nd-edit" onClick={() => navigate(`/notice/edit/${state.noticeData.notice_id}`)}>
               수정
             </button>
             <button className="nd-actionBtn nd-del" onClick={onClickDelete}>삭제</button>
-
-          </div>)}
+          </div>
         </div>
 
         <div className="nd-divider" />
@@ -222,13 +211,12 @@ export default function NoticeDetail() {
                   </button>
                 </div>
                 <div className="nd-commentBody">{c.comment_write}
-                    {TokenManager.getNickname() === c.user_nickname && (
-                      <button
-                      className="nd-commentDelete"
-                      onClick={() => onDeleteComment(c.comment_id)}
-                    >
-                      댓글 삭제
-                </button>)}
+                  <button
+                  className="nd-commentDelete"
+                  onClick={() => onDeleteComment(c.comment_id)}
+                >
+                  댓글 삭제
+                </button>
                 </div>
               </li>
             ))}
