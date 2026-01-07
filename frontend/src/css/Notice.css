@@ -2,18 +2,18 @@
 /* 게시글 상세 페이지 */
 /* ---------------------------------------------- */
 /* 전체 배경 */
-.nd-page {min-height: 100vh;padding: 28px 12px;display: flex;justify-content: center;background: #fff; margin-top: 80px; }
+.nd-page {min-height: 100vh; padding: 28px 12px; display: flex; justify-content: center; background: #fff;}
 
 /* 카드 (중앙 프레임) */
-.nd-card {width: min(720px, 100%);border: 1px solid #e7e7e7;border-radius: 10px;padding: 18px 18px 22px;background: #fff;}
+.nd-card {width: min(720px, 100%); border: 1px solid #e7e7e7; border-radius: 10px; padding: 18px 18px 22px;background: #fff;}
 
 /* 제목 */
 .nd-title {margin: 0 0 10px; font-size: 32px;font-weight: 900;}
 
 /* 메타 + 좋아요 */
-.nd-metaRow {display: flex;align-items: center;justify-content: space-between;gap: 12px;flex-wrap: wrap;}
+.nd-metaRow {display: flex; align-items: center;justify-content: space-between;gap: 12px;flex-wrap: wrap;}
 
-.nd-metaLeft {display: flex;align-items: center;gap: 8px;color: #444;font-size: 13px;}
+.nd-metaLeft {display: flex; align-items: center; gap: 8px; color: #444; font-size: 13px;}
 
 .nd-author {font-weight: 700;}
 .nd-date {color: #444;}
@@ -221,7 +221,7 @@
 /* 게시글 작성 / 수정 페이지 */
 /* ---------------------------------------------- */
 .NoticeWrite_all {width: 100%; max-width: 1200px; }
-.NW_title_box {width: 140px; height: 45px; margin-bottom: 70px ; background-color: #F3EEFF; display: flex; justify-content: center; align-items: center; border-radius: 5px; margin-top: 100px; }
+.NW_title_box {width: 140px; height: 45px; margin-bottom: 70px ; background-color: #F3EEFF; display: flex; justify-content: center; align-items: center; border-radius: 5px;}
 .NW_title {width: 130px; height: 32px; margin-top: 5px; font-weight: 550; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #444;}
 .image-preview-container {display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;}
 .preview-image {width: 120px; height: 120px; object-fit: cover; border-radius: 8px;}

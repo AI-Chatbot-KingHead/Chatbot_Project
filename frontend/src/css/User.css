@@ -1,7 +1,7 @@
 /* ---------------------------------------------- */
 /* 회원가입 */
 /* ---------------------------------------------- */
-.signup-bs-page {background: #fff; margin-top: 80px; }
+.signup-bs-page {background: #fff;}
 .text-center {padding: 50px; margin: 20px 0;}
 .sns_login_text {font-size: 25px; font-weight: 400; padding-bottom: 10px;}
 .signup-bs-arrow {color: #d11; font-weight: 800;font-size: 13px;}
@@ -148,7 +148,7 @@
 /* ---------------------------------------------- */
 /* 로그인 */
 /* ---------------------------------------------- */
-.login-page {margin-top: 80px; display: grid; place-items: center;}
+.login-page {display: grid; place-items: center;}
 .login-card {width: 450px; padding: 34px 34px 28px;  box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin: 70px 0;}
 .login-title {display: flex; justify-content: center; align-items: center; margin: 15px 0 30px 0;}
 .login-title h4 {font-size: 23px; font-weight: 800;}
@@ -181,7 +181,7 @@
 /* ---------------------------------------------- */
 /* 마이페이지 */
 /* ---------------------------------------------- */
-.mypage-content {max-width: 1000px; margin: 50px auto;margin-top: 100px;}
+.mypage-content {max-width: 1000px; margin: 50px auto;}
 .mypage-img {max-width: 180px; max-height: 230px; margin: 15px 50px;}
 .mypage-box {display:flex; border-top:5px solid #6868AC; padding:10px 0px; align-items:center; max-width: 400px;}
 .mypage-moneybox {display:flex;  align-items:center; max-width: 400px;}
