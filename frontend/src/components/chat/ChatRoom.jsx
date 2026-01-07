@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import "../../css/ChatRoom.css";
 
 export default function ChatRoom({ room, messages = [], onSend }) {
-  // const [msg, setMsg] = useState("");
+  const [msg, setMsg] = useState("");
   const endRef = useRef(null);
 
   // 메시지 추가되면 맨 아래로 자동 스크롤

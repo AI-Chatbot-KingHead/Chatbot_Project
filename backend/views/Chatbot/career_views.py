@@ -87,7 +87,7 @@ def chat_usage(user):
     user_name = session.get('user_nickname') or session.get('nickname') or session.get('user_name') or session.get('name') or DEFAULT_NAME
     user_id = session.get('user_id')
 
-    #기존 일상 상담 내역이 있는지 확인하여 가져옴
+    #기존 일상 상담 내역이 있는지 확인하여 가져옴                                                                             
     history = []
     if user_id:
         try:
