@@ -1,0 +1,79 @@
+/*태연 버전 css*/
+.chatShell {width: 100%; min-height: 100vh; display: grid; grid-template-columns: 320px 1fr; background: #f6f7fb;}
+
+/* ----------------------------------------------------- */
+/* 왼쪽 대화목록 */
+/* ----------------------------------------------------- */
+.chatSidebar {border-right: 1px solid #e5e7eb; background: #f3f4ff; display: flex; flex-direction: column;}
+.sidebarHeader {height: 56px; display: flex; align-items: center; gap: 10px; padding: 0 14px; border-bottom: 1px solid #e5e7eb;}
+
+.backBtn {border: none; background: #e9eafe; padding: 6px 10px; border-radius: 10px; cursor: pointer;}
+
+.sidebarTitle {font-weight: 700; color: #374151;}
+.sidebarList {padding: 12px; display: flex; flex-direction: column; gap: 10px;}
+
+.aiItem {border: 1px solid #e5e7eb; background: #fff; border-radius: 14px; padding: 12px 12px; cursor: pointer; text-align: left;}
+.aiItem:hover {border-color: #c7d2fe;}
+.aiItem.active {border-color: var(--bot-color); box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.03);}
+
+.aiItemTitle {font-weight: 800; color: #111827;}
+.aiItemSub {margin-top: 4px; font-size: 12px; color: #6b7280;}
+
+/* ----------------------------------------------------- */
+/* 오른쪽 */
+/* ----------------------------------------------------- */
+.chatMain {padding: 30px 20px; display: flex; flex-direction: column; align-items: center;}
+.chatTitle {font-size: 32px; font-weight: 900; color: var(--bot-color); margin: 10px 0 14px;}
+
+.stateBox {width: min(980px, 92%); border-radius: 18px; padding: 26px; margin-top: 300px; text-align: center;}
+.stateTitle {font-weight: 900; font-size: 20px; color: #111827;}
+.stateDesc {margin-top: 8px; color: #6b7280;}
+
+.introBox { width: min(980px, 92%); background: #fff; border: 1px solid #e5e7eb; border-radius: 18px; padding: 18px 18px; margin: 6px 0 12px;}
+.introBox .initial-text {margin-top: 0 !important; margin-bottom: 10px !important;}
+
+.chatPanel {width: min(980px, 92%); background: #fff; border: 1px solid #e5e7eb; border-radius: 18px; overflow: hidden;}
+
+.chatMessages {height: 360px; overflow-y: auto; padding: 16px;}
+
+.chatEmpty {text-align: center; color: #6b7280; padding: 30px 0;}
+.chatEmptyEmoji {font-size: 22px; margin-bottom: 8px;}
+
+.chatRow {display: flex; margin: 10px 0;}
+.chatRow.isUser {justify-content: flex-end;}
+.chatRow.isAi {justify-content: flex-start;}
+
+.chatBubble {max-width: 78%; padding: 10px 12px; border-radius: 14px; font-size: 14px; line-height: 1.45; word-break: break-word; border: 1px solid #e5e7eb;}
+.chatBubble.user {background: rgba(0, 0, 0, 0.02);}
+.chatBubble.ai {background: #fff;}
+
+.chatTyping {margin-top: 10px; font-size: 13px; color: #6b7280;}
+
+.chatInputBar {width: min(980px, 92%); display: flex; gap: 10px; margin-top: 12px; background: #fff; border: 1px solid #e5e7eb; border-radius: 18px; padding: 10px;}
+.chatInput {flex: 1; height: 44px; border: 1px solid #e5e7eb; border-radius: 14px; padding: 0 12px; outline: none;}
+
+.chatSendBtn {width: 92px; height: 44px; border: none; border-radius: 14px; background: var(--bot-color); color: #fff; font-weight: 800; cursor: pointer;}
+.chatSendBtn:disabled {opacity: 0.5; cursor: not-allowed;}
+.chatReportBtn {width: min(980px, 92%); margin-top: 12px; height: 44px; border-radius: 14px; border: none; background: #111827; color: #fff; font-weight: 800; cursor: pointer;}
+.chatReportBtn:disabled {opacity: 0.6; cursor: not-allowed;}
+.chatReportBox {width: min(980px, 92%); margin-top: 12px; background: #fff; border: 1px solid #e5e7eb; border-radius: 18px; padding: 16px;}
+
+#responsive-navbar-nav {font-size: 20px;}
+
+@media (max-width: 900px) {
+  .chatShell {
+    grid-template-columns: 1fr;
+  }
+
+  .chatSidebar {
+    display: none;
+  }
+
+  .chatTitle {
+    font-size: 26px;
+  }
+
+  .chatMessages {
+    height: 320px;
+  }
+}
