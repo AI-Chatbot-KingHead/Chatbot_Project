@@ -40,7 +40,7 @@ def create_app():
     @app.after_request
     def after_request(response):
         origin = request.headers.get('Origin')
-        if origin in ['http://localhost:3000', 'http://localhost:80']:
+        if origin in ['http://localhost:3000', 'http://localhost:80','http://localhost']:
             response.headers['Access-Control-Allow-Origin'] = origin
         response.headers['Access-Control-Allow-Credentials'] = 'true'
         response.headers['Access-Control-Allow-Headers'] = 'Authorization,Content-Type'
