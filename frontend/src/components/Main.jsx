@@ -9,6 +9,8 @@ const AIIntroduce = () => {
     const [Loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
+    const IMG_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
+
     // StrictMode에서 useEffext 2번 실행 방지용
     const fetchedRef = useRef(false);
 
@@ -169,7 +171,7 @@ const AIIntroduce = () => {
                     <Container className="membership_text">
                         <Row>
                             <Col xs={6} md={4}>
-                                <Image src='/img/Membership.gif' alt="멤버십_가입_소개_gif파일" className="membership_gif" roundedCircle />
+                                <Image src='/img/membership.gif' alt="멤버십_가입_소개_gif파일" className="membership_gif" roundedCircle />
                             </Col>
                         </Row>
                     </Container>
@@ -189,7 +191,7 @@ const AIIntroduce = () => {
                                 <Col key={item.name || index} xs={6} md={6} className="AICategory_circle" onClick={() => navigate(`/ai/${item.id}`)}>
                                     <div className="circle_div">
                                         <Image
-                                            src={item.image || `/img/default-category-${index + 1}.png`}
+                                            src={`${IMG_URL}${item.image}` || item.image}
                                             roundedCircle
                                         />
                                         <div className="circle_text d-none d-lg-block">

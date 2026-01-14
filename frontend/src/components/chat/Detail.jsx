@@ -17,6 +17,7 @@ export default function Detail() {
     const [usageInfo, setUsageInfo] = useState(null);
     const navigate = useNavigate();
 
+    const IMG_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
 
     const fetchDetail = useCallback(async () => {
         try {
@@ -87,7 +88,7 @@ export default function Detail() {
             <div className="wf-wrap">
                 <section className="wf-top">
                     <div className="wf-leftIcon">
-                        <img className="wf-logo" src={aiData.ai_image || "/img/detail-2.png"} alt="AI 로고" />
+                        <img className="wf-logo" src={`${IMG_URL}${aiData.ai_image}` || "/img/detail-2.png"} alt="AI 로고" />
                     </div>
                     <div className="wf-rightText">
                         <h1 className="wf-title">{aiData.ai_name}</h1>
@@ -117,7 +118,7 @@ export default function Detail() {
                         {reviews.map((r) => (
                             <div className="wf-row" key={r.review_id}>
                                 <div className="wf-avatarBox">
-                                    <img className="wf-avatarImg" src={r?.user_image} alt="아바타" />
+                                    <img className="wf-avatarImg" src={`${IMG_URL}${r?.user_image}`} alt="아바타" />
                                 </div>
                                 <div className="wf-reviewText">
                                     <div className="wf-name">{r.user_nickname}</div>

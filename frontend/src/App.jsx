@@ -63,7 +63,6 @@ function App() {
                 <Route path="/Pay" element={<Pay />} />
                 {/*  <Route path='/Detail' element={<Detail />} /> */}
                 <Route path="/ai/:aiId" element={<Detail />} />
-                <Route path='/ErrorPage' element={<ErrorPage />} />
                 <Route path='/NoticeWrite' element={<NoticeWrite />} />
                 <Route path="/notice/:noticeId" element={<NoticeDetail />} />
             </Route>
@@ -76,6 +75,7 @@ function App() {
 
             {/* 해더푸터 없음 */}
             <Route element={<EmptyLayout />}>
+                <Route path='/ErrorPage' element={<ErrorPage />} />
                 <Route path='/ChatList' element={<ChatList />} />
             </Route>
 

@@ -13,6 +13,8 @@ export default function ChatList() {
   const [messagesByRoom, setMessagesByRoom] = useState({});
   const [loadingMessages, setLoadingMessages] = useState(false);
 
+  const IMG_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
+
   useEffect(() => {
     const fetchRooms = async () => {
       setLoadingRooms(true);
@@ -123,7 +125,7 @@ export default function ChatList() {
                 onClick={() => handleClickRoom(room.id)}
               >
                 {room.img ? (
-                  <img className="chatAvatarImg" src={room.img} alt="" />
+                  <img className="chatAvatarImg" src={`${IMG_URL}${room.img}`} alt="" />
                 ) : (
                   <div className="chatAvatar" />
                 )}

@@ -20,6 +20,8 @@ const Mypage = () => {
   const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const IMG_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
+
   const fetchProfile = async () => {
     try {
       const data = await getMyProfile();
@@ -139,7 +141,7 @@ const Mypage = () => {
         <div className="mypage-topCard">
           <div className="mypage-profileArea">
             <img
-              src={userInfo?.image ? `http://localhost:5000${userInfo.image}` : "/img/default_profile.png"}
+              src={userInfo?.image ? `${IMG_URL}${userInfo.image}` : "/img/default_profile.png"}
               className="mypage-img"
               alt="profile"
             />

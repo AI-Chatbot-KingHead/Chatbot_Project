@@ -7,6 +7,7 @@ import { TokenManager } from '../../api/User_Api';
 export default function NoticeDetail() {
   const { noticeId } = useParams();
   const navigate = useNavigate();
+  const IMG_URL = `${window.location.protocol}//${window.location.hostname}:5000`;
 
 
   // 상태 통합
@@ -165,7 +166,7 @@ export default function NoticeDetail() {
           ))}
           {state.noticeData.notice_image && (
             <div className="nd-imageWrap">
-              <img className="nd-image" src={state.noticeData.notice_image} alt="공지 이미지" />
+              <img className="nd-image" src={`${IMG_URL}${state.noticeData.notice_image}`} alt="공지 이미지" />
             </div>
           )}
         </div>
