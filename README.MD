@@ -297,14 +297,9 @@ AI 채팅을 중심으로 한 기본 서비스 흐름을 먼저 구현하고,<br
 </details>
 
 <details><summary>🎥 게시판 & 리뷰</summary>
-- 게시글 조회, 작성, 삭제 <br>
-- 리뷰 작성 및 관리
 
-[게시판기능실행](./videos/게시판%20상세.mp4)
+[게시글 작성.mp4](docs/%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%8B%9C%EA%B8%80%20%EC%9E%91%EC%84%B1.mp4)
 
-![NoticeWrite](/docs/화면구현/게시글%20작성.mp4)
-- [게시글삭제](./videos/게시판%20삭제.mp4)
-- [리뷰작성및삭제](./videos/리뷰%20작성,%20삭제.mp4)
 
 </details>
 
