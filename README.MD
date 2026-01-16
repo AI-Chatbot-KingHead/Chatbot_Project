@@ -298,7 +298,7 @@ AI 채팅을 중심으로 한 기본 서비스 흐름을 먼저 구현하고,<br
 
 <details><summary>🎥 게시판 & 리뷰</summary>
 
-[게시글 작성.mp4](docs/%ED%99%94%EB%A9%B4%EA%B5%AC%ED%98%84/%EA%B2%8C%EC%8B%9C%EA%B8%80%20%EC%9E%91%EC%84%B1.mp4)
+[게시글 작성.mp4](.docs/video/NoticeWrite.gif)
 
 
 </details>
